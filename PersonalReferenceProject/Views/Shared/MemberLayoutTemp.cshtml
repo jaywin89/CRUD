@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+        <link href="~/Content/memberStyle.css" rel="stylesheet" />
+
+    <meta name="viewport" content="width=device-width" />
+    @*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">*@
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <section class="hero">
+            <nav id="sidebar">
+
+                <!-- Sidebar Header -->
+                <!-- Sidebar Links -->
+                <ul class="list-unstyled components" style="margin-top:20%;">
+                    <li><a href="/Home/HomePage">Home</a></li>
+                    <li><a href="/Home/Add">Add</a></li>
+                    <li><a href="/Home/Search">Search</a></li>
+                    <li><a>Logout</a></li>
+               
+                </ul>
+
+            </nav>
+        </section>
+        <div id="content">
+
+        </div>
+
+    </div>
+    @RenderBody()
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+    <script src="/Scripts/app/app.js"></script>
+    <script src="/Scripts/app/Controller/UserNameController.js"></script>
+    <script src="/Scripts/app/Services/UserNameService.js"></script>
+    <script src="~/Scripts/app/Controller/ReferenceController.js"></script>
+    <script src="~/Scripts/app/Services/ReferenceService.js"></script>
+</body>
+</html>

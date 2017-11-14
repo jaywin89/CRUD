@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/MemberLayoutTemp.cshtml";
+}
+<style>
+    /*input[type="text"]{
+        background: rgba(0, 0, 0, 0);
+        border: none;
+        outline: none;
+    }*/
+  
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: black;
+    }
+    .textBox {
+       font-weight:bold;
+        font-family: 'Ubuntu', Helvetica, Arial;
+        background: rgba(0, 0, 0, 0);
+
+
+    }
+    .backgroundChange {
+        background: rgba(0, 0, 0, 0);
+    }
+
+</style>
+<div style="margin-top:2%;" ng-app="referenceApp" ng-controller="referenceController as rc">
+    <div class="blankDiv">
+        <div class="col-md-8 col-sm-8" style="float:right;border:solid;margin-right:10%;" >
+            <h2 style="margin-top:2%;">Insert new reference</h2>
+            <form style="margin-top:5%;">
+                <div>
+                    Category Type
+                    <select name="state" class="input-small form-control textBox" ng-model="rc.addRefModel.categoryType" style="border:solid;">
+                        <option value="">Please Select</option>
+                        <option value="SQL">SQL</option>
+                        <option value="Angular JS">Angular JS</option>
+                        <option value="Bootstrap">Bootstrap</option>
+                        <option value="Rest Service">Rest Service</option>
+                        <option value="C#">C#</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="Git Bash">Git Bash</option>
+                        <option value="HTML">HTML</option>
+
+                    </select>
+                </div>
+                <br />
+                Keywords
+                <input type="text" name="companyName" class="form-control textBox" placeholder="Keywords" ng-model="rc.addRefModel.keywords" style="border:solid;" />
+                <br />
+                Example
+                <textarea class="form-control textBox" rows="10" name="tagLine" placeholder="Tagline" ng-model="rc.addRefModel.example" style="border:solid;"></textarea>
+                <button style="float:right; margin-bottom:5%; margin-top:2.5%;" ng-click="rc.submit()">Submit</button>
+
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
+

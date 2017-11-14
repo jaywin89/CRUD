@@ -1,0 +1,42 @@
+﻿<div>
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">Example</h3>
+
+    </div>
+
+    <div class="modal-body" id="modal-body">
+        <form name="contentForm" class="contentForm" ng-cloak>
+       
+            <div >
+                <div >
+                    <label class="control-label"> </label>
+                    <div class="control-group col-md-12">
+                        <div>
+                            Keywords
+                            <input type="text" ng-disabled="$ctrl.disable" name="keywordSearch" class="form-control" ng-model="$ctrl.getCurrentRef.keywords" />
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            <label>Example</label>
+                            <textarea ng-disabled="$ctrl.disable" type="text" class="form-control" rows="20" ng-model="$ctrl.getCurrentRef.example"></textarea>
+
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="form-group">
+                                <input type="button" ng-hide="$ctrl.otherButtons" class="btn btn-primary" ng-click="$ctrl.edit()" value="Edit" />
+                                <input type="button" ng-show="$ctrl.otherButtons" class="btn btn-primary" ng-click="$ctrl.delete()" value="Delete" />
+                                <input type="button" ng-show="$ctrl.otherButtons" class="btn btn-primary" ng-click="$ctrl.submitEdit()" value="Submit" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+
+     
+    </div>
+</div>

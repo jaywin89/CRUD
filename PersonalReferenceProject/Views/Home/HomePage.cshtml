@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = "/Views/Shared/MemberLayoutTemp.cshtml";
+}
+
+
+<div style="margin-top:2%;" ng-app="referenceApp" ng-controller="referenceController as rc">
+    <div class="blankDiv">
+        <div class="col-md-8 col-sm-8" style="float:right;border:solid;margin-right:10%;">
+            <h1 style="margin-top:2%;">Check Current Temperature Right Now</h1>
+            <form style="margin-top:5%;">
+                <div>
+               <p style="font-size:8em;text-align:center;color:black;">{{rc.currentWeather}}&#xb0;</p>
+                    <p style="font-size:8em;text-align:center;color:black;">{{rc.currentCity}}</p>
+                </div>
+                <br />
+                <input type="text" name="companyName" class="form-control textBox" placeholder="Enter Zipcode" ng-model="rc.searchZipcode" style="border:solid;" />
+                <br />
+               <button style="float:right; margin-bottom:5%; margin-top:2.5%;" ng-click="rc.findWeather()">Search</button>
+
+            </form>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <section class="hero">
+            <nav id="sidebar">
+
+                <!-- Sidebar Header -->
+                <!-- Sidebar Links -->
+                <ul class="list-unstyled components" style="margin-top:20%;">
+                    <li><a href="/Home/HomePage">Home</a></li>
+                    <li><a href="/Home/MemberLogin">Search</a></li>
+                    <li><a href="#">Add</a></li>
+                    <li><a href="#">View All</a></li>
+                </ul>
+
+            </nav>
+        </section>
+        <div id="content">
+
+        </div>
+
+    </div>
+
+
+    <script src="~/Scripts/jquery-3.2.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+
+    <script src="/Scripts/app/app.js"></script>
+    <script src="/Scripts/app/Controller/UserNameController.js"></script>
+    <script src="/Scripts/app/Services/UserNameService.js"></script>
+
+</body>
+</html>*@

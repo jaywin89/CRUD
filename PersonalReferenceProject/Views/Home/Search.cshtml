@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/MemberLayoutTemp.cshtml";
+}
+<style>
+    .thisWholeDiv {
+        background: rgba(0, 0, 0, 0);
+        border: solid;
+        font-weight: bolder;
+        font-size: 1.5em;
+        background-color: hsla(198, 42%, 44%, 0.60);
+        
+    }
+    .searchBar {
+        border: solid;
+        font-weight: bolder;
+        background-color: hsla(198, 42%, 44%, 0.60);
+    }
+</style>
+<div class="widget-body"  ng-app="referenceApp" ng-controller="referenceController as rc" ng-cloak>
+    <div class="col-md-9" style="float:right;">
+        <h1>Search reference</h1>
+        <div class="panel-body">
+            <div class="controls">
+                Category Type
+                <select name="state" class="input-small form-control textBox thisWholeDiv" ng-model="rc.searchRefModel.categoryType" style="border:solid; font-size:1em;">
+                    <option value="">Please Select</option>
+                    <option value="">None</option>
+                    <option value="SQL">SQL</option>
+                    <option value="Angular JS">Angular JS</option>
+                    <option value="Bootstrap">Bootstrap</option>
+                    <option value="Rest Service">Rest Service</option>
+                    <option value="C#">C#</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="Git Bash">Git Bash</option>
+                    <option value="HTML">HTML</option>
+                </select>
+                <br />
+
+                <p class="help-block"></p>
+            </div>
+        </div>
+        <div style="margin-bottom:1%; margin-left:65%">
+            <input type="text" name="keywordSearch" class="searchBar" placeholder="Search by keyword" ng-model="rc.searchRefModel.keywords" />
+            <input class="btn btn-primary btn-md" type="button" style="color:black;" value="Search" ng-click="rc.getAllRefByType()" />
+        </div>
+        <div class="panel-body">
+            <form name="List">
+                <div class="form-group list-group-item thisWholeDiv" ng-repeat="ref in rc.allRefModel;" ng-click="rc.openExample(ref)">
+                    <div>
+                        <div>Type: {{ref.categoryType}}</div>
+                        <div>Keywords: {{ref.keywords}}</div>
+                        @*<time>{{ content.createdDate | date:'MM-dd-yyyy h:mm:ssa'}} </time>*@
+                        @*<time>{{ content.createdDate | moment: 'fromNow'}} </time>*@
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <div style="margin-top:2.5%;">
+
+
+                <div style="padding-right: 100px;float:right;" >
+                    <button class="btn btn-gray btn-rounded thisButton" style="cursor:default;" ng-click="rc.dynamicButton(1) " ng-disabled="rc.pagSettings.pageNumber == 1">«</button>
+                    <button class="btn btn-gray btn-rounded thisButton" style="cursor:default;" ng-click="rc.decrementPagNum()" ng-disabled="rc.pagSettings.pageNumber == 1">prev</button>
+
+                    <button class="btn btn-gray btn-rounded target" style="cursor:default;" ng-click="rc.dynamicButton(rc.pagSettings.firstButton)" ng-disabled="rc.pagSettings.firstButton == rc.pagSettings.pageNumber">{{rc.pagSettings.firstButton}}</button>
+                    <button class="btn btn-gray btn-rounded target" style="cursor:default;" ng-click="rc.dynamicButton(rc.pagSettings.secondButton)" ng-disabled="rc.pagSettings.secondButton == rc.pagSettings.pageNumber || rc.pagSettings.secondButton > rc.pagSettings.totalPages">{{rc.pagSettings.secondButton}}</button>
+                    <button class="btn btn-gray btn-rounded target" style="cursor:default;" ng-click="rc.dynamicButton(rc.pagSettings.thirdButton)" ng-disabled="rc.pagSettings.thirdButton == rc.pagSettings.pageNumber || rc.pagSettings.thirdButton > rc.pagSettings.totalPages">{{rc.pagSettings.thirdButton}}</button>
+
+                    <button class="btn btn-gray btn-rounded" style="cursor:default;" ng-click="rc.incrementPagNum()" ng-disabled="rc.pagSettings.pageNumber == rc.pagSettings.totalPages">next</button>
+                    <button class="btn btn-gray btn-rounded" style="cursor:default;" ng-click="rc.dynamicButton(rc.pagSettings.totalPages)" ng-disabled="rc.pagSettings.pageNumber == rc.pagSettings.totalPages">»</button>
+                </div>
+
+        
+        </div>
+    </div>
+</div>
