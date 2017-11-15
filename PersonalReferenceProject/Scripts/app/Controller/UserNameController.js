@@ -20,6 +20,7 @@
             userNameService.login(vm.loginModel)
                 .then(function (data) {
                     console.log(data)
+                    setTimeout(function () { window.location.href = 'http://localhost:65257/Home/HomePage'; }, 500);
                 }).catch(function (err) {
                     console.log(err)
                 })

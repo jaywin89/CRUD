@@ -29,10 +29,11 @@ namespace PersonalReferenceProject.Service
                 SqlDbParameter.Instance.BuildParameter("@Id", id, SqlDbType.Int, paramDirection: ParameterDirection.Output)
                 }
             };
-            Adapter.ExecuteQuery(cmdDef, (collection =>
+            Adapter.ExecuteQuery(cmdDef, (collection) =>
             {
-                int.TryParse(collection[3].Value.ToString(), out id);
-            }));
+                id = collection.GetParmValue<int>("@Id");
+                //int.TryParse(collection[3].Value.ToString(), out id);
+            });
             return id;
         }
 
@@ -48,7 +49,7 @@ namespace PersonalReferenceProject.Service
                     {
                 SqlDbParameter.Instance.BuildParameter("@Id", model.Id, System.Data.SqlDbType.Int),
                 SqlDbParameter.Instance.BuildParameter("@Keywords", model.Keywords, System.Data.SqlDbType.NVarChar, 256),
-                SqlDbParameter.Instance.BuildParameter("@Example", model.Example, System.Data.SqlDbType.NVarChar, 256)
+                SqlDbParameter.Instance.BuildParameter("@Example", model.Example, System.Data.SqlDbType.NVarChar, -1)
                     }
                 });
             }

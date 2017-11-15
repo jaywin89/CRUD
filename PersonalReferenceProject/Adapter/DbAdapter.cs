@@ -101,7 +101,7 @@ namespace PersonalReferenceProject.Adapter
             }
         }
 
-        public int ExecuteQuery(IDbCmdDef cmdDef, Action<IDataParameter[]> returnParameters = null)
+        public int ExecuteQuery(IDbCmdDef cmdDef, Action<IDbDataParameter[]> returnParameters = null)
         {
             try
             {

@@ -74,6 +74,15 @@ namespace PersonalReferenceProject.Tools
             double.TryParse(dr[columnIndex].ToString(), out dbl);
             return dbl;
         }
+        public static T GetParmValue<T>(this IDataParameter[] dbParams, string parameterName)
+        {
+            foreach (IDataParameter param in dbParams)
+            {
+                if (param.ParameterName.ToLower().Contains(parameterName.ToLower()))
+                    return (T)Convert.ChangeType(param.Value, typeof(T));
+            }
+            return default(T);
+        }
 
     }
 
