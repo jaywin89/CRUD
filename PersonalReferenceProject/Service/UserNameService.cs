@@ -51,7 +51,7 @@ namespace PersonalReferenceProject.Service
             };
             Adapter.ExecuteQuery(cmdDef, (collection =>
             {
-                int.TryParse(collection[4].Value.ToString(), out id);
+                int.TryParse(collection[3].Value.ToString(), out id);
             }));
             return id;
         }
