@@ -13,8 +13,8 @@ namespace PersonalReferenceProject.Service
         {
             get
             {
-                return new DbAdapter(new SqlCommand(), new SqlConnection("Server=DESKTOP-J3U9NDT\\SQLEXPRESS;Database=QuickReference;Trusted_Connection=True"));
-
+                return new DbAdapter(new SqlCommand(), new SqlConnection("Server=sql7001.site4now.net;Database=DB_A2CD42_coderepo;User Id=DB_A2CD42_coderepo_admin;Password=qwerty1234"));
+                //("Server=DESKTOP-J3U9NDT\\SQLEXPRESS;Database=QuickReference;Trusted_Connection=True"));
             }
         }
     }
